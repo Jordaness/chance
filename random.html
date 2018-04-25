@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Chance</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var quarters = 100;
+
+        function playLottery(money){
+            if(money > 0){
+                money -= 1; //gotta pay to play the lottery;
+                return runChance(money);
+            }
+            else {
+                console.log("Please earn more quarters before continuing to play.")
+            }
+            return money;
+        }
+
+        function runChance(money){
+            if(Math.floor((Math.random()*100)) == 42){
+                console.log( "You've won the lottery!!")
+                var winnings = Math.floor(Math.random()*50)+50;
+                console.log("Your winnings are %i quarters!", winnings);
+                money += winnings;
+                return money;
+            }
+            else{
+                console.log("Sorry you did not win the lottery. :-(");
+                return money;
+            }
+
+        }
+
+
+
+    </script>
+</body>
+</html>
